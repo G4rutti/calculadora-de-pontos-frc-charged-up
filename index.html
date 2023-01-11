@@ -27,9 +27,9 @@
                 <h3>Peças do Jogo</h3>
                 <div class="card">
                     <p>Pontuado em uma linha inferior</p>
-                    <select id="pecasDoJogo-1Auto">
+                    <select id="pecasDoJogo-1Auto" onchange="pegarValor('pecasDoJogo-1Auto')">
                         <option value="0" >0</option>
-                        <option value="1" >1</option>
+                        <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="card">
                     <p>Pontuado em uma linha intermediaria</p>
-                    <select id="pecasDoJogo-2Auto">
+                    <select id="pecasDoJogo-2Auto" onchange="pegarValor('pecasDoJogo-2Auto')">
                         <option value="0" >0</option>
                         <option value="1" >1</option>
                         <option value="2">2</option>
@@ -56,7 +56,7 @@
                     </select> 
                 </div><div class="card">
                     <p>Pontuado em uma linha superior</p>
-                    <select id="pecasDoJogo-3Auto">
+                    <select id="pecasDoJogo-3Auto" onchange="pegarValor('pecasDoJogo-3Auto')">
                         <option value="0">0</option>
                         <option value="1" >1</option>
                         <option value="2">2</option>
@@ -92,8 +92,8 @@
                 <h3>Peças do Jogo</h3>
                 <div class="card">
                     <p>Pontuado em uma linha inferior</p>
-                    <select id="pecasDoJogo-1TeleOp">
-                        <option value="0" selected>0</option>
+                    <select id="pecasDoJogo-1TeleOp" onchange="pegarValor('pecasDoJogo-1TeleOp')">
+                        <option value="0">0</option>
                         <option value="1" >1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -107,8 +107,8 @@
                 </div>
                 <div class="card">
                     <p>Pontuado em uma linha intermediaria</p>
-                    <select id="pecasDoJogo-2TeleOp">
-                        <option value="0" selected>0</option>
+                    <select id="pecasDoJogo-2TeleOp" onchange="pegarValor('pecasDoJogo-2TeleOp')">
+                        <option value="0">0</option>
                         <option value="1" >1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -121,8 +121,8 @@
                     </select> 
                 </div><div class="card">
                     <p>Pontuado em uma linha superior</p>
-                    <select id="pecasDoJogo-3TeleOp">
-                        <option value="0" selected>0</option>
+                    <select id="pecasDoJogo-3TeleOp" onchange="pegarValor('pecasDoJogo-3TeleOp')">
+                        <option value="0" >0</option>
                         <option value="1" >1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -145,7 +145,7 @@
                 </div>
                 <div class="card">
                     <p>Links feitos</p>
-                    <select id="links">
+                    <select id="links" onchange="pegarValor('links')">
                         <option value="0" selected>0</option>
                         <option value="1" >1</option>
                         <option value="2">2</option>
@@ -187,7 +187,8 @@
         </section>
     </main>
     <footer>
-        <button onclick="verificarPontosAutonomo()">Calcular Pontos</button>
+        <button onclick="verificarPontosTeleoperado()">Calcular Pontos</button>
+        <p id="Final"></p>
     </footer>
     <script src="assets/js/index.js"></script>
 </body>
