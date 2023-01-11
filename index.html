@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pontos - Charged UP</title>
+</head>
+<body>
+    <h1>Calculadora de Pontos - FRC</h1>
+    <p>Programa feito e disponibilizado pela equipe NineTails#9219</p>
+    <hr>
+    <main>
+        <section class="tipos" id="autonomo">
+            <h2>Periodo Autonomo</h2>
+            <div class="premio">
+                <h3>Mobilidade</h3>
+                <div class="card">
+                    <p>cada ROBÔ cujos BUMPERS deixaram
+                        completamente sua COMUNIDADE em qualquer ponto
+                        durante o AUTO
+                    </p>
+                    <input type="checkbox" id="moblilidade-1">
+                </div>
+            </div>
+            <div class="premio"> 
+                <h3>Peças do Jogo</h3>
+                <div class="card">
+                    <p>Pontuado em uma linha inferior</p>
+                    <select id="pecasDoJogo-1Auto">
+                        <option value="0" >0</option>
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select> 
+                </div>
+                <div class="card">
+                    <p>Pontuado em uma linha intermediaria</p>
+                    <select id="pecasDoJogo-2Auto">
+                        <option value="0" >0</option>
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select> 
+                </div><div class="card">
+                    <p>Pontuado em uma linha superior</p>
+                    <select id="pecasDoJogo-3Auto">
+                        <option value="0">0</option>
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select> 
+                </div>
+            </div>
+            <div class="premio">
+                <h3>ENCAIXADO e não ACIONADO</h3>
+                <div class="card">
+                    <p>Cada ROBÔ (1 ROBÔ no máximo em periódo automático)</p>
+                    <input type="checkbox" id="encaixadoENaoAcionadoAuto">
+                </div>
+            </div>
+            <div class="premio">
+                <h3>ENCAIXADO e ACIONADO</h3>
+                <div class="card">
+                    <p>Cada ROBÔ (1 ROBÔ no máximo em periódo automático)</p>
+                    <input type="checkbox" id="encaixadoEAcionadoAuto">
+                </div>
+            </div>
+            <hr>
+        </section>
+        <section class="tipos" id="teleoperado">
+            <h2>Periodo teleoperado</h2>
+            <div class="premio"> 
+                <h3>Peças do Jogo</h3>
+                <div class="card">
+                    <p>Pontuado em uma linha inferior</p>
+                    <select id="pecasDoJogo-1TeleOp">
+                        <option value="0" selected>0</option>
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select> 
+                </div>
+                <div class="card">
+                    <p>Pontuado em uma linha intermediaria</p>
+                    <select id="pecasDoJogo-2TeleOp">
+                        <option value="0" selected>0</option>
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select> 
+                </div><div class="card">
+                    <p>Pontuado em uma linha superior</p>
+                    <select id="pecasDoJogo-3TeleOp">
+                        <option value="0" selected>0</option>
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select> 
+                </div>
+            </div>
+            <div class="premio">
+                <h3>Links</h3>
+                <div class="card">
+                    <p>3 NÓS adjacentes em uma LINHA contêm PARTES
+                        DE JOGO pontuadas
+                    </p>
+                    <input type="checkbox" id="3LinksFeito">
+                </div>
+                <div class="card">
+                    <p>Links feitos</p>
+                    <select id="links">
+                        <option value="0" selected>0</option>
+                        <option value="1" >1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select> 
+                </div>
+            </div>
+            <div class="premio">
+                <h3>ENCAIXADO e não ACIONADO</h3>
+                <div class="card">
+                    <p>Cada ROBÔ (1 ROBÔ no máximo em periódo automático)</p>
+                    <input type="checkbox" id="encaixadoENaoAcionadoTeleOp">
+                </div>
+            </div>
+            <div class="premio">
+                <h3>ENCAIXADO e ACIONADO</h3>
+                <div class="card">
+                    <p>Cada ROBÔ (1 ROBÔ no máximo em periódo automático)</p>
+                    <input type="checkbox" id="encaixadoEAcionadoTeleOp">
+                </div>
+            </div>
+            <div class="premio">
+                <h3>Parque</h3>
+                <div class="card">
+                    <p>Cada ROBÔ cujos BUMPERS estão
+                        completamente contidos em sua COMUNIDADE,
+                        mas não atende aos critérios para ENCAIXADO.
+                    </p>
+                    <input type="checkbox" id="parque">
+                </div>
+            </div>
+            <hr>
+        </section>
+    </main>
+    <footer>
+        <button onclick="verificarPontosAutonomo()">Calcular Pontos</button>
+    </footer>
+    <script src="assets/js/index.js"></script>
+</body>
+</html>
