@@ -5,6 +5,7 @@
 }
 
 .infos {
+    text-align: center;
     margin: 0;
     background-color: #d650d2;
     border-radius: 20px;
@@ -13,9 +14,24 @@
 }
 
 .titulo {
-    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d650d2;
+    border-radius: 20px;
+    width: 600px;
+    height: 140px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 40px;
     font-weight: bold;
+    text-align: center;
+}
+
+.subtitulo {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .logotipo{
