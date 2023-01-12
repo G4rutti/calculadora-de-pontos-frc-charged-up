@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.infos {
+    margin: 0;
+    background-color: #d650d2;
+    border-radius: 20px;
+    width: 600px;
+    height: 140px;
+}
+
+.titulo {
+    font-style: italic;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.logotipo{
+    width: 150px;
+    height: 150px;
+    margin-right: 100px;
+}
+
+.logotipo2{
+    width: 150px;
+    height: 150px;
+    margin-left: 100px;
+}
