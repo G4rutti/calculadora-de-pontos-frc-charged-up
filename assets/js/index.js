@@ -17,7 +17,7 @@ const encaixadoENaoAcionadoTele = document.getElementById("encaixadoENaoAcionado
 const encaixadoEAcionadoTele = document.getElementById("encaixadoEAcionadoAuto")
 const parque = document.getElementById('parque')
 const linksFeitos = document.getElementById("3LinksFeito")
-const links = document.getElementById('links')
+const links = document.getElementById('linkes')
 
 function pegarValor(nomeId){
     return parseInt(document.getElementById(nomeId).value)
@@ -50,7 +50,7 @@ const verificarPontosTeleoperado = () => {
     if(linksFeitos.checked){
         ptsTeleoperado += 5
     }
-    if(links.value >= 5){
+    if(links.value > 4){
         classificacao += 1
     }
     if(encaixadoENaoAcionadoTele.checked){
