@@ -1,3 +1,6 @@
+const resultado = document.getElementById('resultado')
+const paragrafo = document.getElementById('Final')
+
 const mobilidade1Auto = document.getElementById("moblilidade-1")
 const pecasDeJogo1Auto = document.getElementById("pecasDoJogo-1Auto")
 const pecasDeJogo2Auto = document.getElementById("pecasDoJogo-2Auto")
@@ -61,5 +64,25 @@ const verificarPontosTeleoperado = () => {
     if(encaixadoEAcionadoTele.checked){
         ptsTeleoperado += 2
     }
-    console.log(ptsTeleoperado)
+    return ptsTeleoperado
+}
+
+const juntarTiposDePontos = () => {
+    return verificarPontosAutonomo() + verificarPontosTeleoperado()
+}
+
+const etapaFinal = () => {
+    if(resultado.value == "Vitória"){
+        classificacao += 2
+    }
+    else if(resultado.value == "Empate"){
+        classificacao += 1
+    }
+    if(ptsChargeStation >= 26){
+        classificacao += 1
+    }
+
+    paragrafo.innerText = `
+    Você fez ${classificacao} pontos de classificação. E fez uma pontuação geral de ${juntarTiposDePontos()}
+    `
 }
