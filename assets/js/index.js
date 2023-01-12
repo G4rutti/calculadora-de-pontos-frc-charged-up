@@ -85,4 +85,8 @@ const etapaFinal = () => {
     paragrafo.innerText = `
     Você fez ${classificacao} pontos de classificação. E fez uma pontuação geral de ${juntarTiposDePontos()}
     `
+    ptsChargeStation = 0
+    linksPontuados = 0
+    classificacao = 0
+
 }
