@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="assets/css/style.css"
+    <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,7 +59,8 @@
                         <option value="8">8</option>
                         <option value="9">9</option>
                     </select> 
-                </div><div class="card">
+                </div>
+                <div class="card">
                     <p>Pontuado em uma linha superior</p>
                     <select id="pecasDoJogo-3Auto" onchange="pegarValor('pecasDoJogo-3Auto')">
                         <option value="0">0</option>
@@ -191,14 +192,17 @@
             <hr>
         </section>
         <h3>Resultado da Partida</h3>
-        <select id="resultado" onchange="pegarValor('resultado')">
-            <option value="Vitoria">Vitória</option>
-            <option value="Empate">Empate</option>
-            <option value="Derrota">Derrota</option>
-        </select> 
+        <div class="resultado">
+            <select id="resultado" onchange="pegarValor('resultado')">
+                <option value="Vitoria">Vitória</option>
+                <option value="Empate">Empate</option>
+                <option value="Derrota">Derrota</option>
+            </select> 
+            <button onclick="etapaFinal()">Calcular Pontos</button>
+        </div>
+        
     </main>
     <footer>
-        <button onclick="etapaFinal()">Calcular Pontos</button>
         <p id="Final"></p>
         <p class="subtitulo">Programa feito e disponibilizado pela equipe NineTails#9219</p>
     </footer>

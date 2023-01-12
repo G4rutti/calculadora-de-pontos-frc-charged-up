@@ -4,6 +4,7 @@
     text-align: center;
     font-family: 'Lato', sans-serif;
     outline: none;
+    text-decoration: none;
 }
 
 .container {
@@ -12,14 +13,6 @@
     align-items: center;
 }
 
-.infos {
-    text-align: center;
-    margin: 0;
-    background-color: #d650d2;
-    border-radius: 20px;
-    width: 600px;
-    height: 140px;
-}
 
 .titulo {
     display: flex;
@@ -27,9 +20,9 @@
     justify-content: center;
     background-color: #d650d2;
     border-radius: 20px;
-    width: 600px;
-    height: 140px;
-    font-size: 40px;
+    width: 50vw;
+    height: 20vh;
+    font-size: 2.5rem;
     font-weight: bold;
     text-align: center;
 }
@@ -41,19 +34,19 @@
 } */
 
 .logotipo{
-    width: 150px;
-    height: 150px;
-    margin-right: 100px;
-    margin-left: 100px;
+    width: 15vw;
+    height: 30vh;
+    margin-right: 2vw;
+    margin-left: 2vw;
 }
 #primeiroHr{
     margin-top: 0;
 }
-
 hr{
     margin-top: 5vh;
     width: 85vw;
 }
+
 .premios{
     display: flex;
     flex-direction: column;
@@ -73,5 +66,72 @@ hr{
     border-radius: 5px;
     height: 10vh;
     align-items: center;
+    justify-content: space-around;
+}
+.card p{
+    width: 30vw;
+    margin-right: 2vw;
+}
+input{
+    min-width: 20px;
+    min-height: 20px;
+}
+
+#resultado{
+    width: 10vw;
+    height: 5vh;
+    border: 0;
+    margin: 0;
+}
+button{
+    cursor: pointer;
+    width: 10vw;
+    height: 5vh;
+    border: 0;
+    
+}
+button:hover{
+    transition-duration: 0.5s;
+    color: white;
+    background-color: #BD08C1;
+}
+#Final{
+    font-size: 1.5rem;
+}
+.resultado{
+    display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width:900px) {
+    button{
+        width: 30vw;
+        height: 5vh;
+    }
+    #resultado{
+        width: 30vw;
+        height: 5vh;
+    }
+    .card p{
+        width: 60vw;
+        font-size: 0.8rem;
+    }
+    .card{
+        width: 80vw;
+    }
+    .logotipo{
+        width:20vw;
+        height: 10vh;
+        margin-right: 2vw;
+        margin-left: 2vw;
+    }
+    .titulo{
+        width: 60vw;
+        font-size: 1.3rem;
+
+    }
+    #Final{
+        margin: 0;
+        color: whitesmoke;
+    }
 }
