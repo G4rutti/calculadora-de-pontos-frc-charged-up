@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap');
+
+* {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    outline: none;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -21,27 +29,49 @@
     border-radius: 20px;
     width: 600px;
     height: 140px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 40px;
     font-weight: bold;
     text-align: center;
 }
 
-.subtitulo {
+/* .subtitulo {
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
     font-size: 15px;
-}
+} */
 
 .logotipo{
     width: 150px;
     height: 150px;
     margin-right: 100px;
+    margin-left: 100px;
+}
+#primeiroHr{
+    margin-top: 0;
 }
 
-.logotipo2{
-    width: 150px;
-    height: 150px;
-    margin-left: 100px;
+hr{
+    margin-top: 5vh;
+    width: 85vw;
+}
+.premios{
+    display: flex;
+    flex-direction: column;
+}
+.tipos h2{
+    margin-bottom: 5vh;
+}
+
+.card{
+    font-size: 0.9rem;
+    margin: auto;
+    display: flex;
+    width: 50vw;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2vh;
+    border-radius: 5px;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
 }
