@@ -17,7 +17,7 @@ const encaixadoENaoAcionadoTele = document.getElementById("encaixadoENaoAcionado
 const encaixadoEAcionadoTele = document.getElementById("encaixadoEAcionadoAuto")
 const parque = document.getElementById('parque')
 const linksFeitos = document.getElementById("3LinksFeito")
-const links = document.getElementById("links")
+const links = document.getElementById('links')
 
 function pegarValor(nomeId){
     return parseInt(document.getElementById(nomeId).value)
@@ -72,7 +72,7 @@ const juntarTiposDePontos = () => {
 }
 
 const etapaFinal = () => {
-    if(resultado.value == "Vitória"){
+    if(resultado.value == "Vitoria"){
         classificacao += 2
     }
     else if(resultado.value == "Empate"){
