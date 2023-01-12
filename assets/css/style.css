@@ -102,7 +102,10 @@ button:hover{
     display: flex;
     justify-content: center;
 }
-
+#Final{
+    margin: 0;
+    color: whitesmoke;
+}
 @media screen and (max-width:900px) {
     button{
         width: 30vw;
@@ -130,8 +133,5 @@ button:hover{
         font-size: 1.3rem;
 
     }
-    #Final{
-        margin: 0;
-        color: whitesmoke;
-    }
+    
 }
