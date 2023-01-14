@@ -7,8 +7,6 @@ const pecasDeJogo2Auto = document.getElementById("pecasDoJogo-2Auto")
 const pecasDeJogo3Auto = document.getElementById("pecasDoJogo-3Auto")
 const encaixadoENaoAcionadoAuto = document.getElementById("encaixadoENaoAcionadoAuto")
 const encaixadoEAcionadoAuto = document.getElementById("encaixadoEAcionadoAuto")
-var classificacao = 0
-var ptsChargeStation = 0
 var linksPontuados = 0
 const pecasDeJogo1Tele = document.getElementById("pecasDoJogo-1TeleOp")
 const pecasDeJogo2Tele = document.getElementById("pecasDoJogo-2TeleOp")
@@ -50,9 +48,7 @@ const verificarPontosTeleoperado = () => {
     if(linksFeitos.checked){
         ptsTeleoperado += 5
     }
-    if(links.value >= 5){
-        classificacao += 1
-    }
+    
     if(encaixadoENaoAcionadoTele.checked){
         ptsTeleoperado += 6
         ptsChargeStation += 6
@@ -71,22 +67,51 @@ const juntarTiposDePontos = () => {
     return verificarPontosAutonomo() + verificarPontosTeleoperado()
 }
 
-const etapaFinal = () => {
+const verificarPontosDeClassificacao = () => {
+    var classificacao = 0
     if(resultado.value == "Vitoria"){
         classificacao += 2
     }
-    else if(resultado.value == "Empate"){
+    if(resultado.value == "Empate"){
         classificacao += 1
     }
-    if(ptsChargeStation >= 26){
+    if(verificarPontosDaChargeStation() >= 26){
+        classificacao += 1
+    }
+    if(parseInt(links.value) >= 5){
         classificacao += 1
     }
 
+    return classificacao
+}
+
+const verificarPontosDaChargeStation = () => {
+    var ptsChargeStation = 0
+
+    if(encaixadoENaoAcionadoAuto.checked){
+        ptsChargeStation += 8
+    }
+    if(encaixadoEAcionadoAuto.checked){
+        ptsChargeStation += 12
+    }
+    if(encaixadoENaoAcionadoTele.checked){
+        ptsChargeStation += 6
+    }
+    if(encaixadoEAcionadoTele.checked){
+        ptsChargeStation += 10
+    }
+
+    return ptsChargeStation
+}
+
+const etapaFinal = () => {
+
     paragrafo.innerText = `
-    Você fez ${classificacao} pontos de classificação. E fez uma pontuação geral de ${juntarTiposDePontos()}
+    Você fez ${verificarPontosDeClassificacao()} pontos de classificação. E fez uma pontuação geral de ${juntarTiposDePontos()}
     `
-    ptsChargeStation = 0
+    
     linksPontuados = 0
     classificacao = 0
+    ptsChargeStation = 0
 
 }
