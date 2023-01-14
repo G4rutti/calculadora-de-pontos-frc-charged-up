@@ -50,7 +50,7 @@ const verificarPontosTeleoperado = () => {
     if(linksFeitos.checked){
         ptsTeleoperado += 5
     }
-    if(links.value > 4){
+    if(links.value >= 5){
         classificacao += 1
     }
     if(encaixadoENaoAcionadoTele.checked){
