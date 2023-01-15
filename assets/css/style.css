@@ -220,6 +220,7 @@ button:hover{
     }
     .card{
         width: 80vw;
+        height: auto;
     }
     .logotipo{
         width:20vw;
