@@ -8,6 +8,8 @@ const pecasDeJogo3Auto = document.getElementById("pecasDoJogo-3Auto")
 const encaixadoENaoAcionadoAuto = document.getElementById("encaixadoENaoAcionadoAuto")
 const encaixadoEAcionadoAuto = document.getElementById("encaixadoEAcionadoAuto")
 var linksPontuados = 0
+var ptsAutonomo = 0
+var ptsTeleoperado = 0
 const pecasDeJogo1Tele = document.getElementById("pecasDoJogo-1TeleOp")
 const pecasDeJogo2Tele = document.getElementById("pecasDoJogo-2TeleOp")
 const pecasDeJogo3Tele = document.getElementById("pecasDoJogo-3TeleOp")
@@ -36,7 +38,6 @@ function alterarClique(idDeTroca){
 }
 
 const verificarPontosAutonomo = () => {
-    var ptsAutonomo = 0
     if(mobilidade1Auto.checked){
         ptsAutonomo += 3
     }
@@ -49,11 +50,12 @@ const verificarPontosAutonomo = () => {
     if(encaixadoEAcionadoAuto.checked){
         ptsAutonomo += 12
     }
-    return ptsAutonomo
+    console.log(ptsAutonomo) 
+    document.getElementById('autonomo').style.display = 'none'
+    document.getElementById('teleoperado').style.display = 'block'
 }
 
 const verificarPontosTeleoperado = () => {
-    var ptsTeleoperado = 0
     ptsTeleoperado += (pecasDeJogo1Tele.value * 2)
     ptsTeleoperado += (pecasDeJogo2Tele.value * 3)
     ptsTeleoperado += (pecasDeJogo3Tele.value * 5)
@@ -70,7 +72,9 @@ const verificarPontosTeleoperado = () => {
     if(parque.checked){
         ptsTeleoperado += 2
     }
-    return ptsTeleoperado
+    console.log(ptsTeleoperado)
+    document.getElementById('teleoperado').style.display = 'none'
+    document.getElementById('parteFinal').style.display = 'block'
 }
 
 const juntarTiposDePontos = () => {
@@ -117,11 +121,13 @@ const verificarPontosDaChargeStation = () => {
 const etapaFinal = () => {
 
     paragrafo.innerText = `
-    Você fez ${verificarPontosDeClassificacao()} pontos de classificação. E fez uma pontuação geral de ${juntarTiposDePontos()}
+    Você fez ${verificarPontosDeClassificacao()} pontos de classificação. E fez uma pontuação geral de ${ptsAutonomo + ptsTeleoperado}
     `
     
     linksPontuados = 0
     classificacao = 0
     ptsChargeStation = 0
+
+    document.getElementById('botaoReiniciar').style.display = 'inline'
 
 }

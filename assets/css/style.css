@@ -7,6 +7,16 @@
     text-decoration: none;
 }
 
+#teleoperado{
+    display: none;
+}
+#parteFinal{
+    display: none;
+}
+#botaoReiniciar{
+    display: none;
+}
+
 .contar {
     display: flex;
     justify-content: center;
@@ -64,7 +74,7 @@ hr{
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     background-color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 2vh;
+    margin-bottom: 4vh;
     border-radius: 5px;
     height: 10vh;
     align-items: center;
@@ -85,7 +95,7 @@ input{
     border: 0;
     margin: 0;
 }
-button{
+/* button{
     cursor: pointer;
     width: 10vw;
     height: 5vh;
@@ -96,17 +106,83 @@ button:hover{
     transition-duration: 0.5s;
     color: white;
     background-color: #BD08C1;
-}
+} */
+button {
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    width: 10vw;
+    height: 6vh;
+    color: black;
+    border: none;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  button::before {
+    content: "";
+    background-color: #BD08C1;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 700ms ease-in-out;
+    display: inline-block;
+  }
+  
+  button:hover::before {
+    width: 100%;
+  }
+  
 #Final{
     font-size: 1.5rem;
 }
 .resultado{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#resultado{
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    width: 10vw;
+    height: 6vh;
+    color: black;
+    border: none;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    margin-bottom: 2vh;
 }
 #Final{
     margin: 0;
     color: whitesmoke;
+}
+.opcoes{
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    color: black;
+    border: none;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
 }
 
 /* Hide the default checkbox */
@@ -201,12 +277,12 @@ button:hover{
 
 @media screen and (max-width:900px) {
     button{
-        width: 30vw;
-        height: 5vh;
+        width: 35vw;
+        height: 6vh;
     }
     #resultado{
-        width: 30vw;
-        height: 5vh;
+        width: 35vw;
+        height: 6vh;
         margin-bottom: 2vh;
     }
     .resultado{
