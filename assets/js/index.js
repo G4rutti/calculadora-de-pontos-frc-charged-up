@@ -19,9 +19,9 @@ var linksPontuados = 0
 var ptsAutonomo = 0
 var ptsTeleoperado = 0
 
-function pegarValor(nomeId){
-    return parseInt(document.getElementById(nomeId).value)
-}
+// function pegarValor(nomeId){
+//     return parseInt(document.getElementById(nomeId).value)
+// }
 
 function alterarQuantidadeDeOptions(seuId,idDeReferencia){
         const quantidade = 9 - parseInt(document.getElementById(seuId).value)
@@ -40,9 +40,9 @@ const verificarPontosAutonomo = () => {
     if(mobilidade1Auto.checked){
         ptsAutonomo += 3
     }
-    ptsAutonomo += (pecasDeJogo1Auto.value * 3)
-    ptsAutonomo += (pecasDeJogo2Auto.value * 4)
-    ptsAutonomo += (pecasDeJogo3Auto.value * 6)
+    ptsAutonomo += (parseInt(pecasDeJogo1Auto.value) * 3)
+    ptsAutonomo += (parseInt(pecasDeJogo2Auto.value) * 4)
+    ptsAutonomo += (parseInt(pecasDeJogo3Auto.value) * 6)
     if(encaixadoENaoAcionadoAuto.checked){
         ptsAutonomo += 8 
     }
@@ -54,9 +54,9 @@ const verificarPontosAutonomo = () => {
     document.getElementById('teleoperado').style.display = 'block'
 }
 const verificarPontosTeleoperado = () => {
-    ptsTeleoperado += (pecasDeJogo1Tele.value * 2)
-    ptsTeleoperado += (pecasDeJogo2Tele.value * 3)
-    ptsTeleoperado += (pecasDeJogo3Tele.value * 5)
+    ptsTeleoperado += (parseInt(pecasDeJogo1Tele.value) * 2)
+    ptsTeleoperado += (parseInt(pecasDeJogo2Tele.value) * 3)
+    ptsTeleoperado += (parseInt(pecasDeJogo3Tele.value) * 5)
     if(linksFeitos.checked){
         ptsTeleoperado += 5
     }
