@@ -1,15 +1,11 @@
 const resultado = document.getElementById('resultado')
 const paragrafo = document.getElementById('Final')
-
 const mobilidade1Auto = document.getElementById("moblilidade-1")
 const pecasDeJogo1Auto = document.getElementById("pecasDoJogo-1Auto")
 const pecasDeJogo2Auto = document.getElementById("pecasDoJogo-2Auto")
 const pecasDeJogo3Auto = document.getElementById("pecasDoJogo-3Auto")
 const encaixadoENaoAcionadoAuto = document.getElementById("encaixadoENaoAcionadoAuto")
 const encaixadoEAcionadoAuto = document.getElementById("encaixadoEAcionadoAuto")
-var linksPontuados = 0
-var ptsAutonomo = 0
-var ptsTeleoperado = 0
 const pecasDeJogo1Tele = document.getElementById("pecasDoJogo-1TeleOp")
 const pecasDeJogo2Tele = document.getElementById("pecasDoJogo-2TeleOp")
 const pecasDeJogo3Tele = document.getElementById("pecasDoJogo-3TeleOp")
@@ -18,6 +14,10 @@ const encaixadoEAcionadoTele = document.getElementById("encaixadoEAcionadoTeleOp
 const parque = document.getElementById('parque')
 const linksFeitos = document.getElementById("3LinksFeito")
 const links = document.getElementById('linkes')
+
+var linksPontuados = 0
+var ptsAutonomo = 0
+var ptsTeleoperado = 0
 
 function pegarValor(nomeId){
     return parseInt(document.getElementById(nomeId).value)
@@ -30,13 +30,11 @@ function alterarQuantidadeDeOptions(seuId,idDeReferencia){
             select.innerHTML += `<option value="${i}">${i}</option>`
         }
 }
-
 function alterarClique(idDeTroca){
     if(document.getElementById(idDeTroca).checked){
         document.getElementById(idDeTroca).checked = false
     }
 }
-
 const verificarPontosAutonomo = () => {
     if(mobilidade1Auto.checked){
         ptsAutonomo += 3
@@ -54,7 +52,6 @@ const verificarPontosAutonomo = () => {
     document.getElementById('autonomo').style.display = 'none'
     document.getElementById('teleoperado').style.display = 'block'
 }
-
 const verificarPontosTeleoperado = () => {
     ptsTeleoperado += (pecasDeJogo1Tele.value * 2)
     ptsTeleoperado += (pecasDeJogo2Tele.value * 3)
@@ -76,11 +73,9 @@ const verificarPontosTeleoperado = () => {
     document.getElementById('teleoperado').style.display = 'none'
     document.getElementById('parteFinal').style.display = 'block'
 }
-
 const juntarTiposDePontos = () => {
     return verificarPontosAutonomo() + verificarPontosTeleoperado()
 }
-
 const verificarPontosDeClassificacao = () => {
     var classificacao = 0
     if(resultado.value == "Vitoria"){
@@ -98,7 +93,6 @@ const verificarPontosDeClassificacao = () => {
 
     return classificacao
 }
-
 const verificarPontosDaChargeStation = () => {
     var ptsChargeStation = 0
 
@@ -117,7 +111,6 @@ const verificarPontosDaChargeStation = () => {
 
     return ptsChargeStation
 }
-
 const etapaFinal = () => {
 
     paragrafo.innerText = `
