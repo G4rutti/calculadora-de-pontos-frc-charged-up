@@ -11,8 +11,8 @@ var linksPontuados = 0
 const pecasDeJogo1Tele = document.getElementById("pecasDoJogo-1TeleOp")
 const pecasDeJogo2Tele = document.getElementById("pecasDoJogo-2TeleOp")
 const pecasDeJogo3Tele = document.getElementById("pecasDoJogo-3TeleOp")
-const encaixadoENaoAcionadoTele = document.getElementById("encaixadoENaoAcionadoAuto")
-const encaixadoEAcionadoTele = document.getElementById("encaixadoEAcionadoAuto")
+const encaixadoENaoAcionadoTele = document.getElementById("encaixadoENaoAcionadoTeleOp")
+const encaixadoEAcionadoTele = document.getElementById("encaixadoEAcionadoTeleOp")
 const parque = document.getElementById('parque')
 const linksFeitos = document.getElementById("3LinksFeito")
 const links = document.getElementById('linkes')
@@ -31,11 +31,9 @@ const verificarPontosAutonomo = () => {
     ptsAutonomo += (pecasDeJogo3Auto.value * 6)
     if(encaixadoENaoAcionadoAuto.checked){
         ptsAutonomo += 8 
-        ptsChargeStation += 8
     }
     if(encaixadoEAcionadoAuto.checked){
         ptsAutonomo += 12
-        ptsChargeStation += 12
     }
     return ptsAutonomo
 }
@@ -51,13 +49,11 @@ const verificarPontosTeleoperado = () => {
     
     if(encaixadoENaoAcionadoTele.checked){
         ptsTeleoperado += 6
-        ptsChargeStation += 6
     }
     if(encaixadoEAcionadoTele.checked){
         ptsTeleoperado += 10
-        ptsChargeStation += 10
     }
-    if(encaixadoEAcionadoTele.checked){
+    if(parque.checked){
         ptsTeleoperado += 2
     }
     return ptsTeleoperado

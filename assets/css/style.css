@@ -166,6 +166,38 @@ button:hover{
  transform: rotate(45deg);
 }
 
+.rodape{
+    margin-top: 2vh;
+    width: auto;
+    height: auto;
+    font-weight: 400;
+    color: whitesmoke;
+    justify-content: center;
+}
+.rodape ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+.rodape li{
+    cursor: pointer;
+    padding: 1vw 1vw;
+}
+.rodape a{
+    cursor: pointer;
+    text-decoration: none;
+}
+.rodape a:hover{
+    transition-duration: 0.5s;
+    color: #d650d2;
+}
+.rodape a{
+    color: white;
+}
+.rodape i{
+    margin-right: 5px;
+}
+
 @media screen and (max-width:900px) {
     button{
         width: 30vw;
