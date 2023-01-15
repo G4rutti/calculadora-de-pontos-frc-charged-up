@@ -204,10 +204,15 @@ button:hover{
         height: 5vh;
     }
     #resultado{
-        display: flex;        
-        flex-direction: column;
         width: 30vw;
         height: 5vh;
+        margin-bottom: 2vh;
+    }
+    .resultado{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
     .card p{
         width: 60vw;
