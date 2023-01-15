@@ -204,6 +204,8 @@ button:hover{
         height: 5vh;
     }
     #resultado{
+        display: flex;        
+        flex-direction: column;
         width: 30vw;
         height: 5vh;
     }
