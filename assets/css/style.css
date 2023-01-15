@@ -209,7 +209,7 @@ button {
  left: 0;
  height: 1.3em;
  width: 1.3em;
- background: black;
+ background: #BD08C1;
  border-radius: 50px;
  transition: all 0.7s;
  --spread: 20px;
@@ -217,7 +217,7 @@ button {
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
- background: black;
+ background: #BD08C1;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
