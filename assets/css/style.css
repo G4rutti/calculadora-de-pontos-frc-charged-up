@@ -64,6 +64,11 @@ hr{
 }
 .tipos h2{
     margin-bottom: 5vh;
+    border: black solid;
+    padding: 2vw;
+    width: 80vw;
+    text-align: center;
+    margin: auto;
 }
 
 .card{
@@ -274,6 +279,8 @@ button {
 .rodape i{
     margin-right: 5px;
 }
+
+
 
 /* .tipos {
     animation-duration: 3s;
