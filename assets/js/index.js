@@ -21,6 +21,12 @@ function pegarValor(nomeId){
     return parseInt(document.getElementById(nomeId).value)
 }
 
+function alterarClique(idDeTroca){
+    if(document.getElementById(idDeTroca).checked){
+        document.getElementById(idDeTroca).checked = false
+    }
+}
+
 const verificarPontosAutonomo = () => {
     var ptsAutonomo = 0
     if(mobilidade1Auto.checked){
