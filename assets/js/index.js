@@ -20,6 +20,14 @@ const links = document.getElementById('linkes')
 function pegarValor(nomeId){
     return parseInt(document.getElementById(nomeId).value)
 }
+function alterarQuantidadeDeOptions(seuId,idDeReferencia){
+        const quantidade = 9 - parseInt(document.getElementById(`${seuId}`).value)
+        const select = document.getElementById(`${idDeReferencia}`)
+        select.innerHTML = ""
+        for(var i = 0; i <= quantidade; i++){
+            select.innerHTML += `<option value="${i}">${i}</option>`
+        }
+}
 
 function alterarClique(idDeTroca){
     if(document.getElementById(idDeTroca).checked){
