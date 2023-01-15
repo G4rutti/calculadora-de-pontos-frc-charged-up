@@ -275,6 +275,23 @@ button {
     margin-right: 5px;
 }
 
+/* .tipos {
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 50%
+    }
+  
+    to {
+      margin-left: 25%;
+      width: 50%;
+    }
+  } */
+
 @media screen and (max-width:900px) {
     button{
         width: 35vw;
