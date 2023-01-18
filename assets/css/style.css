@@ -89,10 +89,7 @@ hr{
     width: 30vw;
     margin-right: 2vw;
 }
-input{
-    min-width: 20px;
-    min-height: 20px;
-}
+
 
 #resultado{
     width: 10vw;
@@ -176,11 +173,27 @@ button {
     color: whitesmoke;
 }
 .opcoes{
+    height: 4vh;
     cursor: pointer;
     position: relative;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    color: black;
+    border: none;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+}
+.inputTypeNumber{
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    height: 4vh;
     background-repeat: no-repeat;
     box-sizing: border-box;
     color: black;
@@ -298,6 +311,9 @@ button {
       width: 50%;
     }
   } */
+#faltas{
+    display: none;
+}
 
 @media screen and (max-width:900px) {
     button{

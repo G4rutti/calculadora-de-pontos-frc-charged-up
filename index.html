@@ -27,10 +27,12 @@
                         durante o AUTO
                     </p>
                     <!-- <input type="checkbox" id="moblilidade-1"> -->
-                    <label class="container">
-                        <input  type="checkbox" id="moblilidade-1">
-                        <div class="checkmark"></div>
-                    </label>
+                    <select class='opcoes' id="moblilidade-1">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select> 
                 </div>
             </div>
             <div class="premio"> 
@@ -84,23 +86,23 @@
             <div class="premio">
                 <h3>ENCAIXADO e não ACIONADO</h3>
                 <div class="card">
-                    <p>Cada ROBÔ (1 ROBÔ no máximo em periódo automático)</p>
+                    <p>O robô subiu na Estação de carga e desequilibrou? (1 no máximo em Periodo automatico)</p>
                     <!-- <input type="checkbox" id="encaixadoENaoAcionadoAuto"> -->
-                    <label class="container">
-                        <input type="checkbox" id="encaixadoENaoAcionadoAuto" onclick="alterarClique('encaixadoEAcionadoAuto')">
-                        <div class="checkmark"></div>
-                    </label>
+                    <select class='opcoes' id="encaixadoENaoAcionadoAuto" onchange="alterarQuantidadeDeOptions('encaixadoENaoAcionadoAuto','encaixadoENaoAcionadoTeleOp', 3)" >
+                        <option value="0" >0</option>
+                        <option value="1">1</option>
+                    </select> 
                 </div>
             </div>
             <div class="premio">
                 <h3>ENCAIXADO e ACIONADO</h3>
                 <div class="card">
-                    <p>Cada ROBÔ (1 ROBÔ no máximo em periódo automático)</p>
+                    <p>O robô subiu na Estação de carga e equilibrou? (1 ROBÔ no máximo em periódo automático)</p>
                     <!-- <input type="checkbox" id="encaixadoEAcionadoAuto"> -->
-                    <label class="container">
-                        <input type="checkbox" id="encaixadoEAcionadoAuto" onclick="alterarClique('encaixadoENaoAcionadoAuto')">
-                        <div class="checkmark"></div>
-                    </label>
+                    <select class='opcoes' id="encaixadoEAcionadoAuto" onchange="alterarQuantidadeDeOptions('encaixadoEAcionadoAuto','encaixadoEAcionadoTeleOp', 3)" >
+                        <option value="0" >0</option>
+                        <option value="1">1</option>
+                    </select> 
                 </div>
             </div>
             <a href="#"><button onclick="verificarPontosAutonomo()">Prosseguir</button></a>
@@ -187,23 +189,27 @@
             <div class="premio">
                 <h3>ENCAIXADO e não ACIONADO</h3>
                 <div class="card">
-                    <p>Cada ROBÔ (1 ROBÔ no máximo em periódo automático)</p>
+                    <p>O robô subiu na Estação de carga e desequilibrou? (1 no máximo em Periodo automatico)</p>
                     <!-- <input type="checkbox" id="encaixadoENaoAcionadoTeleOp"> -->
-                    <label class="container">
-                        <input type="checkbox" id="encaixadoENaoAcionadoTeleOp" onclick="alterarClique('encaixadoEAcionadoTeleOp')">
-                        <div class="checkmark"></div>
-                    </label>
+                    <select class='opcoes' id="encaixadoENaoAcionadoTeleOp" onchange="alterarQuantidadeDeOptions('encaixadoENaoAcionadoTeleOp','encaixadoENaoAcionadoAuto', 3)" >
+                        <option value="0" >0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select> 
                 </div>
             </div>
             <div class="premio">
                 <h3>ENCAIXADO e ACIONADO</h3>
                 <div class="card">
-                    <p>Cada ROBÔ (1 ROBÔ no máximo em periódo automático)</p>
+                    <p>O robô subiu na Estação de carga e equilibrou? (1 ROBÔ no máximo em periódo automático)</p>
                     <!-- <input type="checkbox" id="encaixadoEAcionadoTeleOp"> -->
-                    <label class="container">
-                        <input type="checkbox" id="encaixadoEAcionadoTeleOp" onclick="alterarClique('encaixadoENaoAcionadoTeleOp')">
-                        <div class="checkmark"></div>
-                    </label>
+                    <select class='opcoes' id="encaixadoEAcionadoTeleOp" onchange="alterarQuantidadeDeOptions('encaixadoEAcionadoTeleOp','encaixadoEAcionadoAuto', 3)" >
+                        <option value="0" >0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select> 
                 </div>
             </div>
             <div class="premio">
@@ -222,6 +228,25 @@
             </div>
             <button onclick="verificarPontosTeleoperado()">Prosseguir</button>
             <hr>
+        </section>
+        <section class="tipos" id="faltas">
+            <h2>Faltas</h2>
+            <div class="premio"> 
+                <h3>Faltas Normais</h3>
+                <div class="card">
+                    <p>Quantas faltas normais fizeram?</p>
+                    <input class="inputTypeNumber" type="number" min="0" max="100" value="0" id="faltaNormal">
+                </div>
+            </div>
+            <div class="premio">
+                <h3>Faltas Técnicas</h3>
+                <div class="card">
+                    <p>Quantas faltas técnicas fizeram?</p>
+                    <input class="inputTypeNumber" type="number" min="0" max="100" value="0" id="faltaTecnica">
+                    <!-- <input type="checkbox" id="3LinksFeito"> -->
+                </div>
+            </div>
+            <button id="faltasGerais">Prosseguir</button>
         </section>
         <div id="parteFinal" class="resultado">
             <h3>Resultado da Partida</h3>

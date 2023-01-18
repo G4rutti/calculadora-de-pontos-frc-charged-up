@@ -15,16 +15,21 @@ const parque = document.getElementById('parque')
 const linksFeitos = document.getElementById("3LinksFeito")
 const links = document.getElementById('linkes')
 
+const faltaNormal = document.getElementById("faltaNormal")
+const faltaTecnica = document.getElementById("faltaTecnica")
+
 var linksPontuados = 0
 var ptsAutonomo = 0
 var ptsTeleoperado = 0
+var ptsChargeStation = 0
+
 
 // function pegarValor(nomeId){
 //     return parseInt(document.getElementById(nomeId).value)
 // }
 
-function alterarQuantidadeDeOptions(seuId,idDeReferencia){
-        const quantidade = 9 - parseInt(document.getElementById(seuId).value)
+function alterarQuantidadeDeOptions(seuId,idDeReferencia, qtd = 9){
+        const quantidade = qtd - parseInt(document.getElementById(seuId).value)
         const select = document.getElementById(idDeReferencia)
         select.innerHTML = ""
         for(var i = 0; i <= quantidade; i++){
@@ -37,18 +42,23 @@ function alterarClique(idDeTroca){
     }
 }
 const verificarPontosAutonomo = () => {
-    if(mobilidade1Auto.checked){
-        ptsAutonomo += 3
-    }
+    ptsAutonomo += (parseInt(mobilidade1Auto.value) * 3)
+    // if(mobilidade1Auto.checked){
+    //     ptsAutonomo += 3
+    // }
     ptsAutonomo += (parseInt(pecasDeJogo1Auto.value) * 3)
     ptsAutonomo += (parseInt(pecasDeJogo2Auto.value) * 4)
     ptsAutonomo += (parseInt(pecasDeJogo3Auto.value) * 6)
-    if(encaixadoENaoAcionadoAuto.checked){
-        ptsAutonomo += 8 
-    }
-    if(encaixadoEAcionadoAuto.checked){
-        ptsAutonomo += 12
-    }
+    ptsAutonomo += (parseInt(encaixadoENaoAcionadoAuto.value) * 8)
+    ptsAutonomo += (parseInt(encaixadoEAcionadoAuto.value * 12))
+    ptsChargeStation += (parseInt(encaixadoENaoAcionadoAuto.value) * 8)
+    ptsChargeStation += (parseInt(encaixadoEAcionadoAuto.value * 12))
+    // if(encaixadoENaoAcionadoAuto.checked){
+    //     ptsAutonomo += 8 
+    // }
+    // if(encaixadoEAcionadoAuto.checked){
+    //     ptsAutonomo += 12
+    // }
     console.log(ptsAutonomo) 
     document.getElementById('autonomo').style.display = 'none'
     document.getElementById('teleoperado').style.display = 'block'
@@ -57,22 +67,26 @@ const verificarPontosTeleoperado = () => {
     ptsTeleoperado += (parseInt(pecasDeJogo1Tele.value) * 2)
     ptsTeleoperado += (parseInt(pecasDeJogo2Tele.value) * 3)
     ptsTeleoperado += (parseInt(pecasDeJogo3Tele.value) * 5)
+    ptsTeleoperado += (parseInt(encaixadoENaoAcionadoTele.value) * 6)
+    ptsTeleoperado += (parseInt(encaixadoEAcionadoTele.value * 10))
+    ptsChargeStation += (parseInt(encaixadoENaoAcionadoTele.value) * 6)
+    ptsChargeStation += (parseInt(encaixadoEAcionadoTele.value * 10))
     if(linksFeitos.checked){
         ptsTeleoperado += 5
     }
     
-    if(encaixadoENaoAcionadoTele.checked){
-        ptsTeleoperado += 6
-    }
-    if(encaixadoEAcionadoTele.checked){
-        ptsTeleoperado += 10
-    }
+    // if(encaixadoENaoAcionadoTele.checked){
+    //     ptsTeleoperado += 6
+    // }
+    // if(encaixadoEAcionadoTele.checked){
+    //     ptsTeleoperado += 10
+    // }
     if(parque.checked){
         ptsTeleoperado += 2
     }
     console.log(ptsTeleoperado)
     document.getElementById('teleoperado').style.display = 'none'
-    document.getElementById('parteFinal').style.display = 'block'
+    document.getElementById('faltas').style.display = 'block'
 }
 const juntarTiposDePontos = () => {
     return verificarPontosAutonomo() + verificarPontosTeleoperado()
@@ -94,28 +108,20 @@ const verificarPontosDeClassificacao = () => {
 
     return classificacao
 }
+const contabilizarPontuacaoNegativa = () => {
+    var resultado = 0
+    resultado += (parseInt(faltaNormal.value) * 5)
+    resultado += (parseInt(faltaTecnica.value) * 12)
+    console.log(resultado)
+    return resultado
+}
 const verificarPontosDaChargeStation = () => {
-    var ptsChargeStation = 0
-
-    if(encaixadoENaoAcionadoAuto.checked){
-        ptsChargeStation += 8
-    }
-    if(encaixadoEAcionadoAuto.checked){
-        ptsChargeStation += 12
-    }
-    if(encaixadoENaoAcionadoTele.checked){
-        ptsChargeStation += 6
-    }
-    if(encaixadoEAcionadoTele.checked){
-        ptsChargeStation += 10
-    }
-
     return ptsChargeStation
 }
 const etapaFinal = () => {
 
     paragrafo.innerText = `
-    Você fez ${verificarPontosDeClassificacao()} pontos de classificação. E fez uma pontuação geral de ${ptsAutonomo + ptsTeleoperado}
+    Você fez ${verificarPontosDeClassificacao()} pontos de classificação. E fez uma pontuação geral de ${(ptsAutonomo + ptsTeleoperado) - contabilizarPontuacaoNegativa()}
     `
     
     linksPontuados = 0
@@ -125,3 +131,9 @@ const etapaFinal = () => {
     document.getElementById('botaoReiniciar').style.display = 'inline'
 
 }
+
+document.getElementById('faltasGerais')
+.addEventListener('click', () => {
+    document.getElementById('parteFinal').style.display = 'block'
+    document.getElementById('faltas').style.display = 'none'
+})
